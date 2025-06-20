@@ -76,8 +76,6 @@
             double.TryParse(Console.ReadLine(), out weight);
             Console.Write("Insert the name of your hobby:");
             hobby = Console.ReadLine();
-
-            C
         }
     }
 }
