@@ -5,7 +5,7 @@
         M,
         F
     }
-    public class Zmienne
+    public class Variables
     {
         public static void Run()
         {

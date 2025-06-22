@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SzkolaDotNetVip
 {
-    public class OperatoryLogiczne
+    public class LogicalOperators
     {
         public static void Run()
         {
@@ -120,25 +120,30 @@ namespace SzkolaDotNetVip
                 return;
             }
 
+            StringBuilder stringBuilder = new StringBuilder();
+
             if (userInput < 21)
             {
-                Console.WriteLine("You are too young");
+                stringBuilder.Append("You are too young");
+                Console.WriteLine(stringBuilder.ToString());
                 return;
             }
             else
             {
-                Console.WriteLine("You can become a member of parliament or prime minister");
+                stringBuilder.Append("You can become a member of parliamentm, prime minister");
             }
 
             if (userInput >= 30)
             {
-                Console.WriteLine("You can become a senator");
+                stringBuilder.Append(", senator");
             }
 
             if (userInput >= 35)
             {
-                Console.WriteLine("You can become a president");
+                stringBuilder.Append(", president");
             }
+
+            Console.WriteLine(stringBuilder.ToString());
         }
 
         public static void Task_6()

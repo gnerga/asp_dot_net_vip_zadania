@@ -10,8 +10,9 @@ namespace SzkolaDotNetVip
     {
         public static void Main(string[] args)
         {
-            //Zmienne.Run();
-            OperatoryLogiczne.Run();
+            //Variables.Run();
+            //LogicalOperators.Run();
+            Loops.Run();
         }
     }
 }
