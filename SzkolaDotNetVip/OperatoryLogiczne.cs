@@ -11,30 +11,22 @@ namespace SzkolaDotNetVip
     {
         public static void Run()
         {
-            //Zadanie_1();
-            //Zadanie_2();
-            //Zadanie_3();
-
-            //Zadanie_4(2000);
-            //Zadanie_4(1900);
-            //Zadanie_4(2024);
-            //Zadanie_4();
-
-            //Zadanie_5();
-
-            //Zadanie_6();
-
-            //Zadanie_7();
-            //Zadanie_8();
-
-            //Zadanie_9();
-            //Zadanie_10();
-            //Zadanie_11();
-            //Zadanie_12();
-            Zadanie_13();
+            Task_1();
+            Task_2();
+            Task_3();
+            Task_4();
+            Task_5();
+            Task_6();
+            Task_7();
+            Task_8();
+            Task_9();
+            Task_10();
+            Task_11();
+            Task_12();
+            Task_13();
         }
 
-        public static void Zadanie_1()
+        public static void Task_1()
         {
             int a = 5;
             int b = 5;
@@ -49,12 +41,15 @@ namespace SzkolaDotNetVip
             }
         }
 
-        public static void Zadanie_2()
+        public static void Task_2()
         {
-            double userInput = -1;
+            double userInput;
 
             Console.Write("Please insert number to check if it is odd or even: ");
-            double.TryParse(Console.ReadLine(), out userInput);
+            if (!double.TryParse(Console.ReadLine(), out userInput))
+            {
+                Console.WriteLine("Invalid input");
+            }
 
             if (userInput % 2 == 0)
             {
@@ -64,16 +59,19 @@ namespace SzkolaDotNetVip
             {
                 Console.WriteLine($"{userInput} is odd.");
             }
-
         }
 
-        public static void Zadanie_3()
+        public static void Task_3()
         {
             double userInput = 0;
 
             Console.WriteLine("Please insert number to check if it is negative or not: ");
-            double.TryParse(Console.ReadLine(), out userInput);
-
+            if (!double.TryParse(Console.ReadLine(), out userInput))
+            {
+                Console.WriteLine("Invalid input");
+                return;    
+            }
+            
             if (userInput < 0)
             {
                 Console.WriteLine("The number is negative");
@@ -84,18 +82,16 @@ namespace SzkolaDotNetVip
             }
         }
 
-        public static void Zadanie_4(int? _userInput = null)
+        public static void Task_4()
         {
             int userInput;
 
-            if (_userInput == null)
+
+            Console.Write("Insert year to check if it is a leap or not: ");
+            if (!int.TryParse(Console.ReadLine(), out userInput))
             {
-                Console.Write("Insert year to check if it is a leap or not: ");
-                int.TryParse(Console.ReadLine(), out userInput);
-            }
-            else
-            {
-                userInput = (int)_userInput;
+                Console.WriteLine("Invalid input");
+                return;
             }
 
             bool isDivisibleBy4   = userInput % 4 == 0;
@@ -112,42 +108,49 @@ namespace SzkolaDotNetVip
             }
         }
 
-        public static void Zadanie_5()
+        public static void Task_5()
         {
             int userInput;
 
-            Console.WriteLine("Wprowadź swój wiek: ");
-            int.TryParse(Console.ReadLine(), out userInput);
+            Console.WriteLine("Enter your age: ");
+
+            if (!int.TryParse(Console.ReadLine(), out userInput))
+            {
+                Console.WriteLine("Invalid input");
+                return;
+            }
 
             if (userInput < 21)
             {
-                Console.WriteLine("Jesteś za młody na stanowiska polityczne");
+                Console.WriteLine("You are too young");
+                return;
             }
             else
             {
-                if (userInput >= 21)
-                {
-                    Console.WriteLine("Możesz zostać posłem lub premierem");
-                }
+                Console.WriteLine("You can become a member of parliament or prime minister");
+            }
 
-                if (userInput >= 30)
-                {
-                    Console.WriteLine("Możesz zostać senatorem");
-                }
+            if (userInput >= 30)
+            {
+                Console.WriteLine("You can become a senator");
+            }
 
-                if (userInput >= 35)
-                {
-                    Console.WriteLine("Możesz zostać prezydentem");
-                }
+            if (userInput >= 35)
+            {
+                Console.WriteLine("You can become a president");
             }
         }
 
-        public static void Zadanie_6()
+        public static void Task_6()
         {
             int userInput;
 
             Console.Write("Insert your height: ");
-            int.TryParse(Console.ReadLine(), out userInput);
+            if (!int.TryParse(Console.ReadLine(), out userInput))
+            {
+                Console.WriteLine("Invalid input");
+                return;
+            }
 
             if (userInput <= 140)
             {
@@ -159,7 +162,7 @@ namespace SzkolaDotNetVip
             }
         }
 
-        public static void Zadanie_7()
+        public static void Task_7()
         {
             int firstNumber;
             int secondNumber;
@@ -181,7 +184,7 @@ namespace SzkolaDotNetVip
             Console.WriteLine($"The number with max value is {max}");
         }
 
-        public static void Zadanie_8()
+        public static void Task_8()
         {
             Console.WriteLine("Check candidate graduation exam results");
 
@@ -211,11 +214,15 @@ namespace SzkolaDotNetVip
             }
         }
 
-        public static void Zadanie_9()
+        public static void Task_9()
         {
             Console.Write("Wprowadz temperature: ");
             double temperature;
-            double.TryParse(Console.ReadLine(), out temperature);
+            if (!double.TryParse(Console.ReadLine(), out temperature))
+            {
+                Console.WriteLine("Niewłaściwe dane wejściowe");
+                return;
+            }
 
             if (temperature < 0)
             {
@@ -243,21 +250,33 @@ namespace SzkolaDotNetVip
             }
         }
 
-        public static void Zadanie_10()
+        public static void Task_10()
         {
             Console.WriteLine("Check if is possible to build a triangle from lines with given length");
 
             Console.Write("Enter a: ");
             int a;
-            int.TryParse(Console.ReadLine(), out a);
+            if (!int.TryParse(Console.ReadLine(), out a))
+            {
+                Console.WriteLine("Invalid input value!");
+                return;
+            }
 
             Console.Write("Enter b: ");
             int b;
-            int.TryParse(Console.ReadLine(), out b);
+            if (!int.TryParse(Console.ReadLine(), out b))
+            {
+                Console.WriteLine("Invalid input value!");
+                return;
+            }
 
             Console.Write("Enter c: ");
             int c;
-            int.TryParse(Console.ReadLine(), out c);
+            if (!int.TryParse(Console.ReadLine(), out c))
+            {
+                Console.WriteLine("Invalid input value!");
+                return;
+            }
 
             if ((a < b + c) || (b < a + c) || (c < a + b))
             {
@@ -269,11 +288,15 @@ namespace SzkolaDotNetVip
             }            
         }
 
-        public static void Zadanie_11()
+        public static void Task_11()
         {
             Console.Write("Wprowadź ocenę: ");
             int mark;
-            int.TryParse(Console.ReadLine(), out mark);
+            if (!int.TryParse(Console.ReadLine(), out mark))
+            {
+                Console.WriteLine("Niewłasciwe dane wejściowe!");
+                return;
+            }
 
             switch (mark)
             {
@@ -301,11 +324,15 @@ namespace SzkolaDotNetVip
             }
         }
 
-        public static void Zadanie_12()
+        public static void Task_12()
         {
             Console.Write("Enter number of week day: ");
             int day;
-            int.TryParse(Console.ReadLine(), out day);
+            if (!int.TryParse(Console.ReadLine(), out day))
+            {
+                Console.WriteLine("Invalid input value");
+                return;
+            }
 
             switch (day)
             {
@@ -336,7 +363,7 @@ namespace SzkolaDotNetVip
             }
         }
 
-        public static void Zadanie_13()
+        public static void Task_13()
         {
             Console.Write("Podaj pierwszą liczbę: ");
             int firstNumber;
@@ -358,31 +385,26 @@ namespace SzkolaDotNetVip
 
             int result = -1;
 
-            bool isResultCalculated = false;
-
             switch (operationNum)
             {
                 case 1:
                     result = firstNumber + secondNumber;
-                    isResultCalculated = true;
                     break;
                 case 2:
                     result = firstNumber - secondNumber;
-                    isResultCalculated = true;
                     break;
                 case 3:
                     result = firstNumber * secondNumber;
-                    isResultCalculated = true;
                     break;
                 case 4:
                     if (secondNumber == 0)
                     {
                         Console.WriteLine("Nie można dzielic przez zero!");
+                        return;
                     }
                     else
                     {
-                        result = firstNumber / secondNumber;
-                        isResultCalculated = true;
+                        result = firstNumber / secondNumber; 
                     }
                     break;
                 default:
@@ -390,10 +412,7 @@ namespace SzkolaDotNetVip
                     break;
             }
 
-            if (isResultCalculated)
-            {
-                Console.WriteLine($"Wynik: {result}");
-            }
+            Console.WriteLine($"Wynik: {result}");
         }   
     }
 }

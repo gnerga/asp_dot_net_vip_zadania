@@ -1,5 +1,10 @@
 ﻿namespace SzkolaDotNetVip
 {
+    internal enum Gender
+    { 
+        M,
+        F
+    }
     public class Zmienne
     {
         public static void Run()
@@ -14,7 +19,7 @@
             string firstName        = "Grzegorz";
             string lastName         = "Nowak";
             int    age              = 30;
-            char   gender           = 'm';
+            Gender   gender           = Gender.M;
             string personalNumber   = "25062014013";
             string employeeNumber   = "2509324094";
         }
@@ -27,7 +32,7 @@
             char secondLetter   = 'n';
             char thirdLetter    = 'j';
 
-            Console.Write($"{thirdLetter} {secondLetter} {firstLetter}\n\n");
+            Console.Write($"{thirdLetter} {secondLetter} {firstLetter}");
         }
 
         public static void Zadanie_3()
@@ -73,10 +78,16 @@
             email = Console.ReadLine();
 
             Console.Write("Insert your height");
-            int.TryParse(Console.ReadLine(), out height);
+            if (!int.TryParse(Console.ReadLine(), out height))
+            {
+                Console.WriteLine("Invalid input!");
+            }
 
             Console.Write("Insert your weight");
-            double.TryParse(Console.ReadLine(), out weight);
+            if (!double.TryParse(Console.ReadLine(), out weight))
+            {
+                Console.WriteLine("Invalid input!");
+            }
 
             Console.Write("Insert the name of your hobby:");
             hobby = Console.ReadLine();
