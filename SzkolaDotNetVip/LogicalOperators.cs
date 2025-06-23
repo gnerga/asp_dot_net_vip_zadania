@@ -174,15 +174,27 @@ namespace SzkolaDotNetVip
             int thirdNumber;
 
             Console.Write("Enter first number: ");
-            int.TryParse(Console.ReadLine(), out firstNumber);
+            if (!int.TryParse(Console.ReadLine(), out firstNumber))
+            {
+                Console.WriteLine("Invalid input value");
+                return;
+            }
 
             Console.Write("Enter second number: ");
-            int.TryParse(Console.ReadLine(), out secondNumber);
+            if (!int.TryParse(Console.ReadLine(), out secondNumber))
+            {
+                Console.WriteLine("Invalid input value");
+                return;
+            }
 
             int max = firstNumber > secondNumber ? firstNumber : secondNumber;
 
             Console.Write("Enter third number: ");
-            int.TryParse(Console.ReadLine(), out thirdNumber);
+            if (!int.TryParse(Console.ReadLine(), out thirdNumber))
+            {
+                Console.WriteLine("Invalid input value");
+                return;
+            }
 
             max = thirdNumber > max ? thirdNumber : max;
 
@@ -195,15 +207,27 @@ namespace SzkolaDotNetVip
 
             Console.Write("Enter math exam result: ");
             int mathResult;
-            int.TryParse(Console.ReadLine(), out mathResult);
+            if (!int.TryParse(Console.ReadLine(), out mathResult))
+            {
+                Console.WriteLine("Invalid input value");
+                return;
+            }
 
             Console.Write("Enter physic exam result: ");
             int physicsResult;
-            int.TryParse(Console.ReadLine(), out physicsResult);
+            if (!int.TryParse(Console.ReadLine(), out physicsResult))
+            {
+                Console.WriteLine("Invalid input value");
+                return;
+            }
 
             Console.Write("Enter chemistry exam result: ");
             int chemistryResult;
-            int.TryParse(Console.ReadLine(), out chemistryResult);
+            if (!int.TryParse(Console.ReadLine(), out chemistryResult))
+            {
+                Console.WriteLine("Invalid input value");
+                return;
+            }
 
             bool checkTotalResult = mathResult + physicsResult + chemistryResult > 180 ? true : false;
             bool isMinResultMet = mathResult > 70 && chemistryResult > 55 && chemistryResult > 45;
@@ -372,11 +396,19 @@ namespace SzkolaDotNetVip
         {
             Console.Write("Podaj pierwszą liczbę: ");
             int firstNumber;
-            int.TryParse(Console.ReadLine(), out firstNumber);
+            if (!int.TryParse(Console.ReadLine(), out firstNumber))
+            {
+                Console.WriteLine("Niewłaściwe dane wejściowe");
+                return;
+            }
 
             Console.Write("Podaj drugą liczbę: ");
             int secondNumber;
-            int.TryParse(Console.ReadLine(), out secondNumber);
+            if (!int.TryParse(Console.ReadLine(), out secondNumber))
+            {
+                Console.WriteLine("Niewłaściwe dane wejściowe");
+                return;
+            }
 
             Console.WriteLine("Wybierz operację [1-4]:");
             Console.WriteLine("1. Dodawanie");
@@ -386,7 +418,11 @@ namespace SzkolaDotNetVip
 
             Console.Write("Wybierz operację: ");
             int operationNum;
-            int.TryParse(Console.ReadLine(), out operationNum);
+            if (!int.TryParse(Console.ReadLine(), out operationNum))
+            {
+                Console.WriteLine("Niewłaściwe dane wejściowe");
+                return;
+            }
 
             int result = -1;
 
