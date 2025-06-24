@@ -15,12 +15,12 @@ namespace SzkolaDotNetVip
         public static void Run()
         {
             //Task_1();
-            //Task_2();
+            Task_2();
             //Task_3();
             //Task_4();
             //Task_5();
             //Task_6();
-            Task_7();
+            //Task_7();
             //Task_8();
             //Task_9();
             //Task_10();
@@ -63,16 +63,18 @@ namespace SzkolaDotNetVip
         public static void Task_2()
         {
             int n = 0;
-
+            StringBuilder result = new StringBuilder();
             do
             {
                 if (n % 2 == 0)
                 {
-                    Console.WriteLine($"{n} is an event value");
+                    //Console.WriteLine($"{n} is an even value");
+                    result.Append($"{n}, ");
                 }
                 n++;
             }
             while (n <= 1000);
+            Console.WriteLine($"All even values in given range: {result.ToString()}");
         }
 
         public static void Task_3()
