@@ -11,19 +11,19 @@ namespace SzkolaDotNetVip
     {
         public static void Run()
         {
-            Task_1();
-            Task_2();
+            //Task_1();
+            //Task_2();
             Task_3();
-            Task_4();
-            Task_5();
-            Task_6();
-            Task_7();
-            Task_8();
-            Task_9();
-            Task_10();
-            Task_11();
-            Task_12();
-            Task_13();
+            //Task_4();
+            //Task_5();
+            //Task_6();
+            //Task_7();
+            //Task_8();
+            //Task_9();
+            //Task_10();
+            //Task_11();
+            //Task_12();
+            //Task_13();
         }
 
         public static void Task_1()
@@ -69,16 +69,20 @@ namespace SzkolaDotNetVip
             if (!double.TryParse(Console.ReadLine(), out userInput))
             {
                 Console.WriteLine("Invalid input");
-                return;    
+                return;
             }
-            
+
             if (userInput < 0)
             {
                 Console.WriteLine("The number is negative");
             }
-            else
+            else if (userInput > 0)
             {
                 Console.WriteLine("The number is positive");
+            }
+            else
+            {
+                Console.WriteLine("The number is zero");
             }
         }
 
@@ -94,7 +98,7 @@ namespace SzkolaDotNetVip
                 return;
             }
 
-            bool isDivisibleBy4   = userInput % 4 == 0;
+            bool isDivisibleBy4 = userInput % 4 == 0;
             bool isDivisibleBy100 = userInput % 100 == 0;
             bool isDivisibleBy400 = userInput % 400 == 0;
 
@@ -161,9 +165,21 @@ namespace SzkolaDotNetVip
             {
                 Console.WriteLine("Congratulation! You are a dwarf!");
             }
+            else if (userInput > 140 && userInput <= 170)
+            {
+                Console.WriteLine("You are short");
+            }
+            else if (userInput > 170 && userInput <= 180)
+            {
+                Console.WriteLine("Your height is average");
+            }
+            else if (userInput > 180 && userInput <= 190)
+            {
+                Console.WriteLine("You are tall !");
+            }
             else
             {
-                Console.WriteLine("Nice! You are a human or... maybe elf?!");
+                Console.WriteLine("Are you a giant?!");
             }
         }
 
@@ -229,7 +245,7 @@ namespace SzkolaDotNetVip
                 return;
             }
 
-            bool checkTotalResult = mathResult + physicsResult + chemistryResult > 180 ? true : false;
+            bool checkTotalResult = mathResult + physicsResult + chemistryResult > 180;
             bool isMinResultMet = mathResult > 70 && chemistryResult > 55 && chemistryResult > 45;
             bool mixedResult = (mathResult + physicsResult > 150) || (mathResult + chemistryResult > 150);
 
@@ -314,7 +330,7 @@ namespace SzkolaDotNetVip
             else
             {
                 Console.WriteLine("You can't build a triangle");
-            }            
+            }
         }
 
         public static void Task_11()
@@ -445,7 +461,7 @@ namespace SzkolaDotNetVip
                     }
                     else
                     {
-                        result = firstNumber / secondNumber; 
+                        result = firstNumber / secondNumber;
                     }
                     break;
                 default:
@@ -454,6 +470,6 @@ namespace SzkolaDotNetVip
             }
 
             Console.WriteLine($"Wynik: {result}");
-        }   
+        }
     }
 }

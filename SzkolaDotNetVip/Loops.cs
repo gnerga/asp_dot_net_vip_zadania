@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Numerics;
 using System.Reflection;
@@ -13,27 +14,30 @@ namespace SzkolaDotNetVip
     {
         public static void Run()
         {
-            Task_1();
-            Task_2();
-            Task_3();
-            Task_4();
-            Task_5();
-            Task_6();
+            //Task_1();
+            //Task_2();
+            //Task_3();
+            //Task_4();
+            //Task_5();
+            //Task_6();
             Task_7();
-            Task_8();
-            Task_9();
-            Task_10();
+            //Task_8();
+            //Task_9();
+            //Task_10();
         }
 
         public static void Task_1()
         {
+            int primeNumberCounter = 0;
             for (int i = 0; i <= 100; i++)
             {
                 if (IsPrime(i))
                 {
-                    Console.WriteLine($"{i} is prime number");
+                    //Console.WriteLine($"{i} is prime number");
+                    primeNumberCounter++;
                 }
             }
+            Console.WriteLine($"There are {primeNumberCounter} prime numbers in given range.");
         }
 
         internal static bool IsPrime(int n)
@@ -106,7 +110,7 @@ namespace SzkolaDotNetVip
                 Console.WriteLine("Invalid input value");
                 return;
             }
-            
+
             if (number < 1)
             {
                 Console.WriteLine("Value must by at least equals or grater then 1");
@@ -164,35 +168,46 @@ namespace SzkolaDotNetVip
                 return;
             }
 
-            int middle = number % 2 == 0 ? number / 2 - 1 : number / 2;
+            int rows = number;
+            bool isEven = rows % 2 == 0;
+
+            int middle = rows / 2;
 
             for (int i = 0; i <= middle; i++)
             {
+                if (isEven && middle == i)
+                {
+                    Console.Write(" ");
+                }
+
                 for (int j = 0; j < number; j++)
                 {
                     if (j >= middle - i && j <= middle + i)
                     {
-                        Console.Write("*");
+                        
+                        Console.Write("* ");
                     }
                     else
                     {
-                        Console.Write(" ");
+                        Console.Write("  ");
                     }
                 }
+              
                 Console.WriteLine();
             }
 
-            for (int i = middle-1; i >= 0; i--)
+            for (int i = middle; i > 0; i--)
             {
+          
                 for (int j = 0; j < number; j++)
                 {
-                    if (j >= middle - i && j <= middle + i)
+                    if (j >= middle - i + 1 && j <= middle + i - 1)
                     {
-                        Console.Write("*");
+                        Console.Write("* ");
                     }
                     else
                     {
-                        Console.Write(" ");
+                        Console.Write("  ");
                     }
                 }
                 Console.WriteLine();
@@ -225,7 +240,7 @@ namespace SzkolaDotNetVip
 
             while (number > 0)
             {
-                result += number % 2 == 0 ? "0" : "1";
+                result = number % 2 == 0 ? "0" : "1" + result;
                 number /= 2;
             }
 
